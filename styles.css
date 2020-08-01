@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: rgb(50, 50, 50);
+    --main-color: rgb(0, 110, 140);
+    --complementary-color: rgb(140, 0, 56);
+    --neutral-color: rgb(120, 120, 120);
+    --background-main-color: rgba(0, 110, 140, 0.4);
+    --background-complementary-color: rgba(140, 0, 56, 0.4);
+    --background-neutral-color: rgba(220, 220, 220, 0.2);
+    --standard-width: 385px;
+    --standard-height: 400px;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 2rem;
+    font-family: 'Open Sans', 'Segoe UI';
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color);
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Share Tech Mono', 'Saira';
+}
+
+h1 {
+    padding: 1rem;
+    color: var(--main-color);
+}
+
+.nav-list li {
+    padding: 0.4rem;
+    text-align: center;
+    list-style: none;
+}
+
+.nav-list a {
+    position: relative;
+    color: inherit;
+    outline: none   ;
+    text-decoration: none;
+}
+
+.nav-list a:hover::after,  .nav-list a:focus::after{
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    width: 0px;
+    height: 2px;    
+    background-color: var(--complementary-color);
+    animation: hover-link 0.3s forwards;
+}
+
+@keyframes hover-link {
+    to {
+        left: 0;
+        width: 100%;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 100%));
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 2rem;
+    grid-template-areas:
+    'prj-1 prj-1'
+    'prj-2 prj-3'
+    'prj-4 prj-5';
+    margin: 2rem 0;
+}
+
+#cash-register {
+    grid-area: prj-1;
+}
+
+#roman-numeral-converter {
+    grid-area: prj-2;
+}
+
+#palindrome-checker {
+    grid-area: prj-3;
+}
+
+#caesars-cipher {
+    grid-area: prj-4;
+}
+
+#telephone-number-validator {
+    grid-area: prj-5;
+}
+
+.project {
+    padding: 1rem 2rem;
+    border: 1px dotted var(--complementary-color);
+    border-radius: 10px;
+}
+
+.project-interface, .container-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.interface-subtitles {
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+/*CASH REGISTER*/
+
+.coffee-shop-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'intf1 title'
+    'intf1 intf2';
+}
+
+#cash-register h2 {
+    grid-area: title;
+}
+
+.coffee-shop-intf1 {
+    grid-area: intf1;
+    padding-bottom: 2rem;
+    border-radius: 10px;
+    background-color: var(--background-neutral-color);
+}
+
+.coffee-shop-intf2 {
+    grid-area: intf2;
+}
+
+.coffee-shop-table {
+    margin: 1rem 0;
+    text-transform: capitalize;
+}
+
+.coffee-shop-th, .coffee-shop-td {
+    padding: 0 3rem;
+}
+
+.coffee-shop-th  {
+    text-align: left;
+    font-weight: normal;
+}
+
+.coffee-shop-td {
+    text-align: right;
+}
+
+.coffe-shop-menu-title {
+    margin-bottom: 1rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.img-coffee-shop-menu {
+    max-width: 180px;
+    min-width: 150px;
+    width: 60%;
+    height: 170px;
+}
+
+.description-drink {
+    text-align: center;
+    font-family: cursive;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.quantity-input{
+    padding: 0.5rem;
+    text-align: center;
+    width: 4rem;
+}
+
+.quantity-counter-minus, .quantity-counter-plus {
+    padding: 0 0.5rem;
+    font-size: 125%;  
+    font-weight: 600; 
+    border: none;
+    background: none;
+    color: var(--complementary-color);
+}
+
+.buy-button, .payment-button, .reset-button {
+    margin: 1rem 0;
+    padding: 0.5rem 2.5rem;
+    border-radius: 10px;
+    border: none;
+    text-transform: capitalize;
+    font-weight: 600;
+    background-color: rgba(0, 110, 140, 0.4);
+}
+
+.buy-button:active, .payment-button:active {
+    transform: scale(0.9);
+}
+
+.money-input {
+    margin: 0 1rem;
+}
+
+.payment-button {
+    padding: 1rem 3rem;
+    color: white;
+    background-color: var(--complementary-color);
+}
+
+.money-balance-output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.money-output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.money-output img {
+    height: 70px;
+    margin: 0.5rem;
+}
+
+.disabled {
+    filter: opacity(0.4);
+}
+
+.reset-button {
+    margin-top: 2rem;
+    text-align: center;
+    transform: scale(1.15);
+    color: var(--complementary-color);
+    background: none;
+}
+
+.reset-button:hover, .reset-button:focus {
+    background: var(--background-neutral-color);
+}
+
+/*OTHER PROJECTS*/
+
+.roman-numeral-input, .palindrome-input, .cipher-input, .cipher-output, .telephone-number-input, .money-input {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 90%;
+    border: 1px solid var(--neutral-color);
+    outline: none;
+    color: inherit;
+    background: var(--background-neutral-color);
+    box-shadow: 1px 1px 1px var(--neutral-color);
+    word-wrap: break-word;
+}
+
+.roman-numeral-input, .roman-numeral-output, .telephone-number-input, .telephone-number-output, .money-input {
+    width: var(--standard-width);
+    text-align: center;
+}
+
+.roman-numeral-output, .telephone-number-output {
+    height: 100%;
+}
+
+.roman-numeral-table {
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 110, 140, 0.2);
+}
+
+.palindrome-input, .cipher-input, .cipher-output {
+    width: 90%;
+    height: var(--standard-height);
+}
+
+.palindrome-output {
+    position: absolute;
+    margin-top: 1.5rem;
+    font-family: 'VT323';
+    font-size: 500%;
+    text-transform: uppercase;
+}
+
+.telephone-number-output {
+    color: var(--complementary-color);
+    text-transform: capitalize;
+}
+
+.clear-button, .validator-button {
+    position: absolute;
+    top: 4.2rem;
+    padding: 0.3rem 1rem;
+    font-size: 200%;
+    border: none;
+    color: var(--neutral-color);
+    background: none;
+}
+
+.clear-button:active, .validator-button:active {
+    transform: scale(0.9);
+}
+
+.roman-numeral-clear-button, .telephone-number-clear-button {
+    margin-left: calc(var(--standard-width) - 40px);
+}
+
+.palindrome-clear-button, .cipher-clear-button {
+    right: 5%;
+}
+
+.telephone-number-validator-button {
+    margin-left: calc(var(--standard-width) - 110px);
+    padding: 1rem 0.5rem;
+    font-size: 125%;
+}
+
+.character-counter {
+    font-size: 90%;
+    font-weight: 600;
+    text-align: right;
+    width: 90%;
+    color: var(--main-color);
+}
+
+/*MEDIA QUERY*/
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 9px;
+    }
+
+    :root {
+        --standard-width: 290px;
+        --standard-height: 350px;
+    }    
+
+    .coffee-shop-grid {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .coffee-shop-th, .coffee-shop-td {
+        padding: 0 2rem;
+    }
+
+    .img-coffee-shop-menu {
+        max-width: 150px;
+        min-width: 130px;
+        width: 90%;
+        height: 150px;
+    }
+
+    #caesars-cipher .wrap {
+        flex-wrap: wrap;
+    }
+
+    .cipher-input, .cipher-output {
+        height: calc(var(--standard-height) / 2);
+    }
+}
+
+@media (max-width: 1000px) {
+    .coffee-shop-grid {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        'title'
+        'intf1'
+        'intf2';
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+        'prj-1'
+        'prj-2'
+        'prj-3'
+        'prj-4'
+        'prj-5';
+    }    
+
+    #cash-register .wrap {
+        flex-wrap: wrap;
+    }
+
+    .container-column {
+        width: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    html {
+        font-size: 8px;
+    }
+
+    :root {
+        --standard-width: 210px;
+    }    
+
+    .coffee-shop-th, .coffee-shop-td {
+        padding: 0 1rem;
+    }
+}
+
+
+@media (max-width: 500px) {
+    body {
+        margin: 0 1rem;
+    }
+
+    .project {
+        padding: 1rem;
+    }
+
+    .coffee-shop-th, .coffee-shop-td {
+        padding: 0 0.5rem;
+    }
+
+    .coffee-shop-td {
+        text-align: center;
+    }
+
+    #coffee-shop-deposit-money {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .money-output img {
+        height: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+

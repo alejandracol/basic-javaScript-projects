@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Saira&family=Share+Tech+Mono&family=VT323&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href='styles.css' rel='stylesheet'>
+    <title>Basic JavaScript Projects</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>JS Algoritms and Data Structures Projects</h1>
+        <nav id='navbar'>
+            <ul class='nav-list'>
+                <li><a href='#cash-register'>Cash Register</a></li>
+                <li><a href='#roman-numeral-converter'>Roman Numeral Converter</a></li>
+                <li><a href='#palindrome-checker'>Palindrome Checker</a></li>
+                <li><a href='#caesars-cipher'>Caesars Cipher</a></li>
+                <li><a href='#telephone-number-validator'>Telephone Number Validator</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div id='cash-register' class='project'>
+            <div class='coffee-shop-grid'>
+                <h2>Cash Register</h2>
+                <section class='project-interface coffee-shop-intf1'>
+                    <output id='coffee-shop-available-money'>
+                    </output>
+                    <output id='coffee-shop-unsorted-money' class='container-column'>
+                    </output>
+                </section>
+                <section class='project-interface coffee-shop-intf2'>
+                    <section class='coffee-shop-menu container-column'>
+                        <p class='coffe-shop-menu-title'>Choose your drink</p>
+                        <div class='container-row wrap'>
+                            <div class='container-column'>
+                                <img src='classic-coffee.jpg' alt='image classic coffee drink'
+                                    class='img-coffee-shop-menu'>
+                                <label for='classic-coffee' class='description-drink'>classic coffee<br>
+                                    <button class='quantity-counter-minus'>&#45;</button>
+                                    <input type='number' id='classic-coffee' name='classic-coffee'
+                                        class='quantity-input' value='1' data-price='3.62'>
+                                    <button class='quantity-counter-plus'>&#43;</button>
+                                </label>
+                                <button type='button' id='classic-coffee-drink-buy-button'
+                                    name='classic-coffee-drink-buy-button' class='buy-button'>buy</button>
+                            </div>
+                            <div class='container-column'>
+                                <img src='cappuccino.jpg' alt='image cappuccino drink' class='img-coffee-shop-menu'>
+                                <label for='cappuccino' class='description-drink'>cappuccino<br>
+                                    <button class='quantity-counter-minus'>&#45;</button>
+                                    <input type='number' id='cappuccino' name='cappuccino' class='quantity-input'
+                                        value='1' data-price='4.15'>
+                                    <button class='quantity-counter-plus'>&#43;</button>
+                                </label>
+                                <button type='button' id='cappuccino-buy-button' name='cappuccino-drink-buy-button'
+                                    class='buy-button'>buy</button>
+                            </div>
+                            <div class='container-column'>
+                                <img src='infusion.jpg' alt='image infusion drink' class='img-coffee-shop-menu'>
+                                <label for='infusion' class='description-drink'>infusion<br>
+                                    <button class='quantity-counter-minus'>&#45;</button>
+                                    <input type='number' id='infusion' name='infusion' class='quantity-input' value='1'
+                                        data-price='5'>
+                                    <button class='quantity-counter-plus'>&#43;</button>
+                                </label>
+                                <button type='button' id='infusion-buy-button' name='infusion-drink-buy-button'
+                                    class='buy-button'>buy</button>
+                            </div>
+                            <div class='container-column'>
+                                <img src='coffee&fruit.jpg' alt='image coffee&fruit drink' class='img-coffee-shop-menu'>
+                                <label for='coffee&fruit' class='description-drink'>coffee & fruit<br>
+                                    <button class='quantity-counter-minus'>&#45;</button>
+                                    <input type='number' id='coffee&fruit' name='coffee&fruit' class='quantity-input'
+                                        value='1' data-price='6.99'>
+                                    <button class='quantity-counter-plus'>&#43;</button>
+                                </label>
+                                <button type='button' id='coffee&fruit-buy-button' name='coffee&fruit-drink-buy-button'
+                                    class='buy-button'>buy</button>
+                            </div>
+                            <div class='container-column'>
+                                <img src='cold-coffee.jpg' alt='image cold coffee drink' class='img-coffee-shop-menu'>
+                                <label for='cold-coffee' class='description-drink'>cold coffee<br>
+                                    <button class='quantity-counter-minus'>&#45;</button>
+                                    <input type='number' id='cold-coffe' name='cold-coffee' class='quantity-input'
+                                        value='1' data-price='4.10'>
+                                    <button class='quantity-counter-plus'>&#43;</button>
+                                </label>
+                                <button type='button' id='cold-coffee-buy-button' name='cold-coffee-drink-buy-button'
+                                    class='buy-button'>buy</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class='coffee-shop-payment container-column'>
+                        <output id='coffee-shop-purchase-summary'>
+                        </output>
+                        <output id='coffee-shop-deposit-money'>
+                        </output>
+                        <output id='coffe-shop-money-balance' class='container-column'>
+                        </output>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <div id='roman-numeral-converter' class='project'>
+            <h2>Roman Numeral Converter</h2>
+            <p>Convert Arabic numbers to Roman numerals and convert Roman numeral to its regular Arabic number value.
+                The smallest number that can be represented in this notation is 1 (I)
+                and the largest number that can be represented in this notation is 3,999 (MMMCMXCIX).</p>
+            <section class='project-interface'>
+                <label for='roman-numeral-input' class='interface-subtitles'>input number</label>
+                <input type="text" id='roman-numeral-input' name="roman-numeral-input" class="roman-numeral-input">
+                <button type='button' id='roman-numeral-clear-button' name='roman-numeral-clear-button'
+                    class="roman-numeral-clear-button clear-button">&#215;</button>
+                <p class='interface-subtitles'>result</p>
+                <output id='roman-numeral-output' for='roman-numeral-input' class='roman-numeral-output'></output>
+            </section>
+        </div>
+
+        <div id='palindrome-checker' class='project'>
+            <h2>Palindrome Checker</h2>
+            <p>A palindrome is a word or sentence that's spelled the same way both
+                forward and backward, ignoring punctuation, case, and spacing.</p>
+            <section class='project-interface'>
+                <label for='palindrome-input' class='interface-subtitles'>input text</label>
+                <textarea id='palindrome-input' name='palindrome-input' class='palindrome-input' maxlength="5000"></textarea>
+                <button type='button' id='palindrome-clear-button' name='palindrome-clear-button'
+                    class="palindrome-clear-button clear-button">&#215;</button>
+                <span id='palindrome-character-counter' class='character-counter'>0 / 5000</span>
+                <output id='palindrome-output' for="palindrome-input" class='palindrome-output'></output>
+            </section>
+        </div>
+
+        <div id='caesars-cipher' class='project'>
+            <h2>Caesars Cipher (ROT13)</h2>
+            <p>ROT13 is a special case of the Caesar cipher where the values of the letters
+                are shifted by 13 places. The same algorithm can be used for encoding and decoding.</p>
+            <div class='container-row wrap'>
+                <section class='project-interface'>
+                    <label for='cipher-input' class='interface-subtitles'>input text</label>
+                    <textarea id='cipher-input' name='cipher-input' class='cipher-input' maxlength="5000"></textarea>
+                    <button type='button' id='cipher-clear-button' name='cipher-clear-button'
+                        class="cipher-clear-button clear-button">&#215;</button>
+                    <span id='cipher-character-counter' class='character-counter'>0 / 5000</span>
+                </section>
+                <section class='project-interface'>
+                    <p class='interface-subtitles'>result</p>
+                    <output id='cipher-output' for="cipher-input" class='cipher-output'></output>
+                    <span class='character-counter' style='color: white;'>.</span>
+
+                </section>
+            </div>
+        </div>
+
+        <div id='telephone-number-validator' class='project'>
+            <h2>Telephone Number Validator</h2>
+            <p>Return true if the passed string looks like a valid US phone number. The area code is required.</p>
+            <section class='project-interface'>
+                <label for=' telephone-number-input' class='interface-subtitles'>input number</label>
+                <input type="text" id='telephone-number-input' name="telephone-number-input"
+                    class="telephone-number-input">
+                <button type='button' id='telephone-number-validator-button' name='telephone-number-validator-button'
+                    class="telephone-number-validator-button validator-button">&#9654;</button>
+                <button type='button' id='telephone-number-clear-button' name='telephone-number-clear-button'
+                class="telephone-number-clear-button clear-button">&#215;</button>
+                <p class='interface-subtitles'>result</p>
+                <output id='telephone-number-output' for='telephone-number-input'
+                    class='telephone-number-output'></output>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="index.js"></script>
+    <script src='ui.js'></script>
+    
+</body>
+
+</html>
