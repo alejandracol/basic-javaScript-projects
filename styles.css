@@ -164,16 +164,16 @@ main {
     text-transform: capitalize;
 }
 
-.coffee-shop-th, .coffee-shop-td {
+.available-money-th, .available-money-td, .purchase-summary-th, .purchase-summary-td {
     padding: 0 3rem;
 }
 
-.coffee-shop-th  {
+.available-money-th, .purchase-summary-th  {
     text-align: left;
     font-weight: normal;
 }
 
-.coffee-shop-td {
+.available-money-td, .purchase-summary-td {
     text-align: right;
 }
 
@@ -338,7 +338,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .roman-numeral-clear-button, .telephone-number-clear-button {
-    margin-left: calc(var(--standard-width) - 40px);
+    right: calc(50% - var(--standard-width) / 2);
 }
 
 .palindrome-clear-button, .cipher-clear-button {
@@ -346,9 +346,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .telephone-number-validator-button {
-    margin-left: calc(var(--standard-width) - 110px);
-    padding: 1rem 0.5rem;
-    font-size: 125%;
+    right: calc(50% - var(--standard-width) / 2 + 4rem);
+    padding: 1rem 0.7rem;
+    font-size: 1.9rem;
 }
 
 .character-counter {
@@ -375,7 +375,7 @@ input[type=number]::-webkit-outer-spin-button {
         grid-template-columns: 220px 1fr;
     }
 
-    .coffee-shop-th, .coffee-shop-td {
+    .available-money-th, .available-money-td, .purchase-summary-th, .purchase-summary-td {
         padding: 0 2rem;
     }
 
@@ -403,6 +403,10 @@ input[type=number]::-webkit-outer-spin-button {
         'title'
         'intf1'
         'intf2';
+    }
+
+    .available-money-th, .available-money-td {
+        padding: 0 3rem;
     }
 }
 
@@ -436,7 +440,7 @@ input[type=number]::-webkit-outer-spin-button {
         --standard-width: 210px;
     }    
 
-    .coffee-shop-th, .coffee-shop-td {
+    .purchase-summary-th, .purchase-summary-td {
         padding: 0 1rem;
     }
 }
@@ -451,11 +455,11 @@ input[type=number]::-webkit-outer-spin-button {
         padding: 1rem;
     }
 
-    .coffee-shop-th, .coffee-shop-td {
+    .purchase-summary-th, .purchase-summary-td {
         padding: 0 0.5rem;
     }
 
-    .coffee-shop-td {
+    .purchase-summary-td {
         text-align: center;
     }
 

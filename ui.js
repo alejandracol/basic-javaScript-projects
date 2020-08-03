@@ -24,9 +24,9 @@ function availableMoneyUpdate(obj) {
     obj.forEach(currency => {
         let tr = document.createElement('tr');
         let money = document.createElement('th');
-        money.classList = 'coffee-shop-th';
+        money.classList = 'available-money-th';
         let quantity = document.createElement('td');
-        quantity.classList = 'coffee-shop-td';
+        quantity.classList = 'available-money-td';
 
         money.innerHTML = `<samp>${currency[0]}</samp>`;
         quantity.innerHTML = `<samp>$ ${currency[1]}</samp>`;
@@ -81,13 +81,13 @@ for (let i = 0; i < quantityInputElement.length; i++) {
                 for (let product in purchaseSummary) {
                     let tr = document.createElement('tr');
                     let description = document.createElement('th');
-                    description.classList = 'coffee-shop-th';
+                    description.classList = 'purchase-summary-th';
                     let unitValue = document.createElement('td');
-                    unitValue.classList = 'coffee-shop-td';
+                    unitValue.classList = 'purchase-summary-td';
                     let quantity = document.createElement('td');
-                    quantity.classList = 'coffee-shop-td';
+                    quantity.classList = 'purchase-summary-td';
                     let subtotal = document.createElement('td');
-                    subtotal.classList = 'coffee-shop-td';
+                    subtotal.classList = 'purchase-summary-td';
 
                     description.innerHTML = `<samp>${product}</samp>`;
                     unitValue.innerHTML = `<samp>${purchaseSummary[product][0]}</samp>`;
